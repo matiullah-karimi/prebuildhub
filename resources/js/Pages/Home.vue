@@ -1,11 +1,13 @@
 <script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import Hero from '@/Components/Common/Hero.vue';
 </script>
 
 <template>
-    <Head title="Welcome" />
-
-    
+    <AppLayout>
+        <Hero />
+    </AppLayout>
 </template>
 
 <style>
