@@ -5,6 +5,7 @@ import Hero from '@/Components/Common/Hero.vue';
 import PropertyList from '@/Components/Properties/PropertyList.vue';
 import ListTitle from '@/Components/Properties/ListTitle.vue';
 import FeaturedBuilders from '@/Components/Builders/FeaturedBuilders.vue'
+import FeaturedCities from '@/Components/Cities/FeaturedCities.vue'
 
 const sections = [
     {
@@ -32,6 +33,20 @@ const sections = [
             </div>
             <div class="mt-12">
                 <FeaturedBuilders />
+            </div>
+            <div class="mt-12">
+                <FeaturedCities />
+            </div>
+            <div class="container mt-12 pb-4">
+                <div class="grid grid-cols-1 text-center">
+                    <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-black dark:text-white">Have Question ? Get in touch!</h3>
+
+                    <p class="text-slate-400 max-w-xl mx-auto">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                
+                    <div class="mt-6">
+                        <a href="contact.html" class="px-4 py-2 inline-block bg-green-600 hover:bg-green-700 text-white rounded-md"><i class="uil uil-phone align-middle me-2"></i> Contact us</a>
+                    </div>
+                </div><!--end grid-->
             </div>
         </div>
     </AppLayout>
