@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { Head, Link, router } from '@inertiajs/vue3';
 import Banner from '@/Components/Banner.vue';
 import Header from '@/Components/Common/Header.vue';
+import Footer from '@/Components/Common/Footer.vue';
 
 defineProps({
     title: String,
@@ -26,6 +27,7 @@ const logout = () => {
             <main>
                 <slot />
             </main>
+            <Footer />
         </div>
     </div>
 </template>
