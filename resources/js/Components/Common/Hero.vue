@@ -20,6 +20,7 @@ import SearchBar from '@/Components/Common/SearchBar.vue';
             <div class="w-1/2 mx-auto">
                 <SearchBar />
             </div>
+            <div class="mt-12">_</div>
         </div>
     </div>
 </template>
