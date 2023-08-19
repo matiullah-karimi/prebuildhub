@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
+Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
 
 Route::middleware([
     'auth:sanctum',
