@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         (new PropertyTypeSeeder())->run();
+        (new PropertyStatusSeeder())->run();
     }
 }
