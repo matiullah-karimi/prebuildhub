@@ -1,9 +1,14 @@
+<script setup>
+  import { Link } from '@inertiajs/vue3';
+
+</script>
+
 <template>
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5">
-        <span class="sr-only">Your Company</span>
-        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+      <a href="/" class="-m-1.5 p-1.5">
+        <span class="sr-only">PrebuildHub</span>
+        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" loading="eager">
       </a>
     </div>
     <div class="flex lg:hidden">
@@ -15,13 +20,13 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Properties</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Builders</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Cities</a>
+      <Link href="/" class="text-sm font-semibold leading-6 text-gray-900">Home</Link>
+      <Link href="/properties" class="text-sm font-semibold leading-6 text-gray-900">Properties</Link>
+      <Link href="/builders" class="text-sm font-semibold leading-6 text-gray-900">Builders</Link>
+      <Link href="/cities" class="text-sm font-semibold leading-6 text-gray-900">Cities</Link>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      <Link href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
@@ -30,10 +35,10 @@
     <div class="fixed inset-0 z-10"></div>
     <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="flex items-center justify-between">
-        <a href="#" class="-m-1.5 p-1.5">
+        <Link href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
           <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
+        </Link>
         <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Close menu</span>
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -44,12 +49,13 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Properties</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Builders</a>
+            <Link href="/" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</Link>
+            <Link href="/properties" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Properties</Link>
+            <Link href="/builders" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Builders</Link>
+            <Link href="/cities" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Cities</Link>
           </div>
           <div class="py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+            <Link href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</Link>
           </div>
         </div>
       </div>
