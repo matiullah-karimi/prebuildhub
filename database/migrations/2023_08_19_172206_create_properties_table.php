@@ -25,12 +25,12 @@ return new class extends Migration
             $table->integer('area');
             $table->integer('bathroom');
             $table->integer('bedroom');
-            $table->integer('floor');
+            $table->integer('floor')->nullable();
             $table->longText('description');
             $table->double('price');
             $table->json('images');
             $table->json('videos')->nullable();
-            $table->json('amenities')->nullable();
+            $table->json('aminities')->nullable();
             $table->json('floor_plans')->nullable();
             $table->foreignId('user_id');
             $table->timestamp('approved_at')->nullable();

@@ -20,10 +20,13 @@ const form = useForm({
     area: '',
     bedroom: '',
     bathroom: '',
+    floor: '',
     images: [],
     aminities: [],
     property_status_id: '',
-    property_type_id: ''
+    property_type_id: '',
+    featured: false,
+    upcoming: false,
 });
 
 defineProps({
@@ -78,7 +81,7 @@ const submit = () => {
                     <InputLabel for="state" value="State" />
                     <select v-model="form.state" class="rounded border-gray-300 w-full mt-1">
                         <option value="">Select State</option>
-                        <option value="on">Ontario</option>
+                        <option value="ON">Ontario</option>
                     </select>
                     <InputError class="mt-2" :message="form.errors.state" />
                 </div>
@@ -103,14 +106,20 @@ const submit = () => {
 
                 <div>
                     <InputLabel for="bedrooms" value="Bedrooms" />
-                    <TextInput id="bedrooms" v-model="form.bedrooms" type="number" class="mt-1 block w-full" required autofocus autocomplete="bedrooms" />
-                    <InputError class="mt-2" :message="form.errors.bedrooms" />
+                    <TextInput id="bedrooms" v-model="form.bedroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bedrooms" />
+                    <InputError class="mt-2" :message="form.errors.bedroom" />
                 </div>
 
                 <div>
                     <InputLabel for="bathrooms" value="Bathrooms" />
-                    <TextInput id="bathrooms" v-model="form.bathrooms" type="number" class="mt-1 block w-full" required autofocus autocomplete="bathrooms" />
-                    <InputError class="mt-2" :message="form.errors.bathrooms" />
+                    <TextInput id="bathrooms" v-model="form.bathroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bathrooms" />
+                    <InputError class="mt-2" :message="form.errors.bathroom" />
+                </div>
+
+                <div>
+                    <InputLabel for="floors" value="Floors" />
+                    <TextInput id="floors" v-model="form.floor" type="number" class="mt-1 block w-full" required autofocus autocomplete="floors" />
+                    <InputError class="mt-2" :message="form.errors.floor" />
                 </div>
 
                 <div>
@@ -141,10 +150,22 @@ const submit = () => {
                 </div>
 
                 <div>
+                    <InputLabel for="featured" value="Featured" />
+                    <Checkbox id="featured" v-model="form.featured" type="checkbox" /> 
+                    <InputError class="mt-2" :message="form.errors.featured" />
+                </div>
+
+                <div>
+                    <InputLabel for="upcoming" value="Upcoming" />
+                    <Checkbox id="upcoming" v-model="form.upcoming" type="checkbox" /> 
+                    <InputError class="mt-2" :message="form.errors.upcoming" />
+                </div>
+
+                <div>
                     <InputLabel for="aminities" value="Aminities" />
                     <div class="flex gap-2 flex-wrap">
                         <div v-for="aminitiy of aminities" :key="aminitiy.id" class="flex gap-1 items-center">
-                            <Checkbox :value="`${aminitiy.id}`" id="aminities" v-model="form.aminities" type="checkbox" /> 
+                            <input type="checkbox" :value="`${aminitiy.id}`" id="aminities" v-model="form.aminities" /> 
                             <span class="text-sm">{{ aminitiy.title }}</span>
                         </div>
                     </div>

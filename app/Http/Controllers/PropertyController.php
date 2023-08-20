@@ -39,7 +39,18 @@ class PropertyController extends Controller
      */
     public function store(StorePropertyRequest $request)
     {
-        Property::create($request->validated());
+        $images = [];
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $images[] = '/storage/' . $image->store('/images', 'public');
+            }
+        }
+
+        Property::create([
+            ...$request->validated(),
+            'images' => $images,
+            'user_id' => auth()->id() ?? 1,
+        ]);
 
         return redirect('/properties')->with('success', 'Property added successfully');
     }
