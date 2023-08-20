@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Aminity;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AminitySeeder extends Seeder
@@ -13,38 +12,38 @@ class AminitySeeder extends Seeder
      */
     public function run(): void
     {
-        Aminity::create(['name' => 'Air Conditioning']);
-        Aminity::create(['name' => 'Balcony']);
-        Aminity::create(['name' => 'Bedding']);
-        Aminity::create(['name' => 'Cable TV']);
-        Aminity::create(['name' => 'Cleaning after Exit']);
-        Aminity::create(['name' => 'Cofee pot']);
-        Aminity::create(['name' => 'Computer']);
-        Aminity::create(['name' => 'Cot']);
-        Aminity::create(['name' => 'Dishwasher']);
-        Aminity::create(['name' => 'DVD']);
-        Aminity::create(['name' => 'Fan']);
-        Aminity::create(['name' => 'Fridge']);
-        Aminity::create(['name' => 'Grill']);
-        Aminity::create(['name' => 'Hairdryer']);
-        Aminity::create(['name' => 'Heating']);
-        Aminity::create(['name' => 'Hi-fi']);
-        Aminity::create(['name' => 'Internet']);
-        Aminity::create(['name' => 'Iron']);
-        Aminity::create(['name' => 'Juicer']);
-        Aminity::create(['name' => 'Lift']);
-        Aminity::create(['name' => 'Microwave']);
-        Aminity::create(['name' => 'Oven']);
-        Aminity::create(['name' => 'Parking']);
-        Aminity::create(['name' => 'Parquet']);
-        Aminity::create(['name' => 'Radio']);
-        Aminity::create(['name' => 'Roof terrace']);
-        Aminity::create(['name' => 'Smoking allowed']);
-        Aminity::create(['name' => 'Terrace']);
-        Aminity::create(['name' => 'Toaster']);
-        Aminity::create(['name' => 'Towelwes']);
-        Aminity::create(['name' => 'Pool']);
-        Aminity::create(['name' => 'Video']);
-        Aminity::create(['name' => 'Wine glasses']);
+        Aminity::create(['title' => 'Air Conditioning']);
+        Aminity::create(['title' => 'Balcony']);
+        Aminity::create(['title' => 'Bedding']);
+        Aminity::create(['title' => 'Cable TV']);
+        Aminity::create(['title' => 'Cleaning after Exit']);
+        Aminity::create(['title' => 'Cofee pot']);
+        Aminity::create(['title' => 'Computer']);
+        Aminity::create(['title' => 'Cot']);
+        Aminity::create(['title' => 'Dishwasher']);
+        Aminity::create(['title' => 'DVD']);
+        Aminity::create(['title' => 'Fan']);
+        Aminity::create(['title' => 'Fridge']);
+        Aminity::create(['title' => 'Grill']);
+        Aminity::create(['title' => 'Hairdryer']);
+        Aminity::create(['title' => 'Heating']);
+        Aminity::create(['title' => 'Hi-fi']);
+        Aminity::create(['title' => 'Internet']);
+        Aminity::create(['title' => 'Iron']);
+        Aminity::create(['title' => 'Juicer']);
+        Aminity::create(['title' => 'Lift']);
+        Aminity::create(['title' => 'Microwave']);
+        Aminity::create(['title' => 'Oven']);
+        Aminity::create(['title' => 'Parking']);
+        Aminity::create(['title' => 'Parquet']);
+        Aminity::create(['title' => 'Radio']);
+        Aminity::create(['title' => 'Roof terrace']);
+        Aminity::create(['title' => 'Smoking allowed']);
+        Aminity::create(['title' => 'Terrace']);
+        Aminity::create(['title' => 'Toaster']);
+        Aminity::create(['title' => 'Towelwes']);
+        Aminity::create(['title' => 'Pool']);
+        Aminity::create(['title' => 'Video']);
+        Aminity::create(['title' => 'Wine glasses']);
     }
 }

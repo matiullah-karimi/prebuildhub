@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
+use App\Models\Aminity;
 use App\Models\PropertyStatus;
 use App\Models\PropertyType;
 use Inertia\Inertia;
@@ -29,6 +30,7 @@ class PropertyController extends Controller
         return Inertia::render('Properties/Create', [
             'types' => PropertyType::all(),
             'statuses' => PropertyStatus::all(),
+            'aminities' => Aminity::all()
         ]);
     }
 
