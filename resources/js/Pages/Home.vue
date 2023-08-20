@@ -38,10 +38,10 @@ const sections = [
                 <FeaturedCities />
             </div>
             <div class="container mt-16 pb-4">
-                <div class="grid grid-cols-1 text-center">
+                <div class="grid grid-cols-1">
                     <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-black dark:text-white">Have Question ? Get in touch!</h3>
                 
-                    <div class="mt-6 w-2/4 mx-auto text-left">
+                    <div class="mt-6 w-2/4 text-left">
                         <ContactForm />
                     </div>
                 </div><!--end grid-->

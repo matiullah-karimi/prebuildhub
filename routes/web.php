@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
+Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
 Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
 
 Route::middleware([

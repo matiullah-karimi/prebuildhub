@@ -12,15 +12,18 @@ const form = useForm({
     title: '',
     price: '',
     description: '',
-    addres_line_1: '',
-    addres_line_2: '',
+    address_line_1: '',
+    address_line_2: '',
     city: '',
     zip_code: '',
+    state: '',
     area: '',
-    bedrooms: '',
-    bathrooms: '',
+    bedroom: '',
+    bathroom: '',
     images: [],
     aminities: [],
+    property_status_id: '',
+    property_type_id: ''
 });
 
 defineProps({
@@ -72,6 +75,15 @@ const submit = () => {
                 </div>
 
                 <div>
+                    <InputLabel for="state" value="State" />
+                    <select v-model="form.state" class="rounded border-gray-300 w-full mt-1">
+                        <option value="">Select State</option>
+                        <option value="on">Ontario</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.state" />
+                </div>
+
+                <div>
                     <InputLabel for="city" value="City" />
                     <TextInput id="city" v-model="form.city" type="text" class="mt-1 block w-full" required autofocus autocomplete="city" />
                     <InputError class="mt-2" :message="form.errors.city" />
@@ -111,6 +123,24 @@ const submit = () => {
                 </div>
 
                 <div>
+                    <InputLabel for="property_type_id" value="Property Type" />
+                    <select id="property_type_id" v-model="form.property_type_id" class="mt-1 block w-full border-gray-300 rounded" required autofocus>
+                        <option value="">Select Type</option>
+                        <option v-for="type in types" :key="type.id" :value="type.id">{{ type.title }}</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.property_type_id" />
+                </div>
+
+                <div>
+                    <InputLabel for="property_status_id" value="Property Status" />
+                    <select id="property_status_id" v-model="form.property_status_id" class="mt-1 block w-full border-gray-300 rounded" required autofocus>
+                        <option value="">Select Status</option>
+                        <option v-for="status in statuses" :key="status.id" :value="status.id">{{ status.title }}</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.property_status_id" />
+                </div>
+
+                <div>
                     <InputLabel for="aminities" value="Aminities" />
                     <div class="flex gap-2 flex-wrap">
                         <div v-for="aminitiy of aminities" :key="aminitiy.id" class="flex gap-1 items-center">
@@ -121,7 +151,7 @@ const submit = () => {
                     <InputError class="mt-2" :message="form.errors.aminities" />
                 </div>
 
-                <div class="flex items-center justify-end mt-4">
+                <div class="flex items-center justify-end mt-4 col-span-2">
                     <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         Create
                     </PrimaryButton>
