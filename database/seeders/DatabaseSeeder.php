@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         (new PropertyTypeSeeder())->run();
         (new PropertyStatusSeeder())->run();
         (new AminitySeeder())->run();
+        (new ProvinceSeeder())->run();
     }
 }
