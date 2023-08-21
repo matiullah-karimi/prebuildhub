@@ -23,7 +23,7 @@ class CityController extends Controller
                 ->through(fn ($city) => [
                     'id' => $city->id,
                     'name' => $city->name,
-                    'state' => $city->state->name,
+                    'province' => $city->province->name,
                     'created_at' => $city->created_at->format('m/d/Y'),
                 ]),
         ]);
@@ -56,7 +56,7 @@ class CityController extends Controller
             'city' => [
                 'id' => $city->id,
                 'name' => $city->name,
-                'state' => $city->state->name,
+                'province' => $city->province->name,
                 'created_at' => $city->created_at->format('m/d/Y'),
             ],
         ]);
@@ -71,7 +71,7 @@ class CityController extends Controller
             'city' => [
                 'id' => $city->id,
                 'name' => $city->name,
-                'state_id' => $city->state_id,
+                'province_id' => $city->province_id,
             ],
         ]);
     }

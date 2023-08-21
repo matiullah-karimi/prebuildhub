@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->foreignId('city_id')->nullable();
-            $table->foreignId('state_id')->nullable();
+            $table->foreignId('province_id')->nullable();
             $table->integer('role')->default(0);
             $table->timestamps();
         });

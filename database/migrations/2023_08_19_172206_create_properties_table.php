@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('country')->nullable();
-            $table->foreignId('city_id')->constrained()->nullOnDelete();
-            $table->foreignId('province_id')->constrained()->nullOnDelete();
+            $table->foreignId('city_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('province_id')->nullable()->constrained()->nullOnDelete();
             $table->string('address_line_1');
             $table->string('address_line_2')->nullable();
             $table->string('zip_code');

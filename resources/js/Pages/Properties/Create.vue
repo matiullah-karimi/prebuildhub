@@ -7,6 +7,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import TextArea from '@/Components/TextArea.vue';
+import { computed } from 'vue';
 
 const form = useForm({
     title: '',
@@ -14,9 +15,9 @@ const form = useForm({
     description: '',
     address_line_1: '',
     address_line_2: '',
-    city: '',
+    city_id: '',
     zip_code: '',
-    state: '',
+    province_id: '',
     area: '',
     bedroom: '',
     bathroom: '',
@@ -29,11 +30,16 @@ const form = useForm({
     upcoming: false,
 });
 
-defineProps({
+const props = defineProps({
     aminities: Array,
     types: Array,
     statuses: Array,
+    provinces: Array,
 })
+
+const province = computed(() => {
+    return props.provinces.find(province => province.id == form.province_id);
+});
 
 const submit = () => {
     form.post(route('properties.store'), {
@@ -78,18 +84,21 @@ const submit = () => {
                 </div>
 
                 <div>
-                    <InputLabel for="state" value="State" />
-                    <select v-model="form.state" class="rounded border-gray-300 w-full mt-1">
-                        <option value="">Select State</option>
-                        <option value="ON">Ontario</option>
+                    <InputLabel for="province_id" value="Province" />
+                    <select v-model="form.province_id" class="rounded border-gray-300 w-full mt-1">
+                        <option value="">Select Province</option>
+                        <option v-for="province in provinces" :key="province.id" :value="province.id">{{ province.name }}</option>
                     </select>
-                    <InputError class="mt-2" :message="form.errors.state" />
+                    <InputError class="mt-2" :message="form.errors.province_id" />
                 </div>
 
-                <div>
-                    <InputLabel for="city" value="City" />
-                    <TextInput id="city" v-model="form.city" type="text" class="mt-1 block w-full" required autofocus autocomplete="city" />
-                    <InputError class="mt-2" :message="form.errors.city" />
+                <div v-if="province">
+                    <InputLabel for="city_id" value="City" />
+                    <select v-model="form.city_id" class="rounded border-gray-300 w-full mt-1">
+                        <option value="">Select City</option>
+                        <option v-for="city in province.cities" :key="city.id" :value="city.id">{{ city.name }}</option>
+                    </select>
+                    <InputError class="mt-2" :message="form.errors.city_id" />
                 </div>
 
                 <div>

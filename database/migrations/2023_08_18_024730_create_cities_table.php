@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->foreignId('state_id')->constrained('states');
+            $table->foreignId('province_id')->constrained('provinces');
             $table->string('image')->nullable();
             $table->timestamps();
         });

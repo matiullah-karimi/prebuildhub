@@ -23,7 +23,7 @@ class UpdateCityRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255'],
-            'state_id' => ['required', 'exists:states,id'],
+            'province_id' => ['required', 'exists:provinces,id'],
             'image' => ['nullable', 'image', 'max:1024'],
         ];
     }
