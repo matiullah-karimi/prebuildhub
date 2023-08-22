@@ -24,7 +24,7 @@ class StoreCityRequest extends FormRequest
         return [
             'name' => ['required', 'max:255'],
             'province_id' => ['required', 'exists:provinces,id'],
-            'image' => ['nullable', 'image', 'max:1024'],
+            'image' => ['required', 'image', 'max:2048'],
         ];
     }
 }

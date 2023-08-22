@@ -12,7 +12,13 @@ class City extends Model
     use HasFactory;
     use HasSlug;
 
-        /**
+    protected $fillable = [
+        'name',
+        'province_id',
+        'image',
+    ];
+
+    /**
      * Get the options for generating the slug.
     */
     public function getSlugOptions() : SlugOptions

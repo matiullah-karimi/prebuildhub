@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Http\Requests\StoreCityRequest;
 use App\Http\Requests\UpdateCityRequest;
+use App\Models\Province;
 use Inertia\Inertia;
 
 class CityController extends Controller
@@ -17,15 +18,9 @@ class CityController extends Controller
         return Inertia::render('Cities/Index', [
             'filters' => request()->all('search'),
             'cities' => City::orderBy('name')
-                ->filter(request()->only('search'))
+                // ->filter(request()->only('search'))
                 ->paginate()
                 ->withQueryString()
-                ->through(fn ($city) => [
-                    'id' => $city->id,
-                    'name' => $city->name,
-                    'province' => $city->province->name,
-                    'created_at' => $city->created_at->format('m/d/Y'),
-                ]),
         ]);
     }
 
@@ -34,7 +29,9 @@ class CityController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Cities/Create');
+        return Inertia::render('Cities/Create', [
+            'provinces' => Province::all()
+        ]);
     }
 
     /**
@@ -42,7 +39,16 @@ class CityController extends Controller
      */
     public function store(StoreCityRequest $request)
     {
-        City::create($request->validated());
+        $image = null;
+        if ($request->hasFile('image')) {
+            $image = '/storage/' . $request->file('image')->store('cities', 'public');
+        }
+
+        City::create([
+            'name' => $request->name,
+            'province_id' => $request->province_id,
+            'image' => $image,
+        ]);
 
         return redirect()->route('cities.index')->with('success', 'City created.');
     }
