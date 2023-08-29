@@ -9,15 +9,19 @@
             type: Object,
             required: true,
         },
+        types: {
+            type: Array,
+            required: true,
+        }
     });
 </script>
 
 <template>
     <app-layout title="Properties List">
-        <div class="mt-4">
-            <PropertySearch />
+        <div class="p-16">
+            <PropertySearch :types="types"/>
         </div>
-        <section class="px-4 py-4 bg-gray-200 lg:px-20">
+        <section class="px-4 py lg:px-20">
             <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:mt-20">
                 <div v-for="property in properties.data" :key="property.id">
                     <PropertyItem :property="property"/>

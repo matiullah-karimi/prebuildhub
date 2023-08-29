@@ -28,4 +28,23 @@ class Property extends Model
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
+
+    function scopeSearch($query) {
+        $filters = request()->all();
+
+        if (isset($filters['type'])) {
+            $query->where('property_type_id', $filters['type']);
+        }
+
+        if (isset($filters['status'])) {
+            $query->where('property_status_id', $filters['status']);
+        }
+
+        if (isset($filters['budget'])) {
+            $query->where('price', '>=', $filters['budget'])
+                ->orWhere('price', '<=', $filters['budget']);
+        }
+
+        return $query;
+    }
 }

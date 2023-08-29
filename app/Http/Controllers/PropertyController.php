@@ -19,7 +19,9 @@ class PropertyController extends Controller
     public function index()
     {
         return Inertia::render('Properties/Index', [
-            'properties' => Property::paginate(20)
+            'properties' => Property::search()
+                ->paginate(20)->withQueryString(),
+            'types' => PropertyType::all(),
         ]);
     }
 

@@ -1,31 +1,43 @@
 <script setup>
+    import TextInput from '@/Components/TextInput.vue';
+    import PrimaryButton from '@/Components/PrimaryButton.vue';
+    import { useForm } from '@inertiajs/vue3';
 
+    defineProps({
+        types: Array,
+    });
+
+    const form = useForm({
+        type: null,
+        location: null,
+        budget: null,
+    });
+
+    const search = () => {
+        form.get(route('properties.index'));
+    };
 </script>
 
 <template>
     <div class="m-4 lg:m-0">
-        <div class="py-2 px-2 bg-white">
-            <form class="flex gap-2">
+        <div class="py-2 px-2">
+            <form class="flex gap-2" @submit.prevent="search">
                 <div class="w-full">
-                    <select class="w-full p-2 border border-gray-400 rounded outline-none focus:ring-2">
-                        <option>Type</option>
-                        <option>Apartment</option>
-                        <option>Apartment</option>
-                        <option>House</option>
-                        <option>Villa</option>
-                        <option>Hotel</option>
-                    </select>
+                    <div>
+                        <select id="property_type_id" v-model="form.type" class="block w-full border-gray-300 rounded" required autofocus>
+                            <option :value="null">Property Type</option>
+                            <option v-for="type in types" :key="type.id" :value="type.id">{{ type.title }}</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="w-full">
-                    <input type="text" class="w-full p-2 border border-gray-400 rounded outline-none focus:ring-2" Placeholder="Location" />
+                    <TextInput v-model="form.location" type="text" class="w-full" Placeholder="Location" />
                 </div>
                 <div class="w-full">
-                    <input type="number" class="w-full p-2 border border-gray-400 rounded outline-none focus:ring-2" placeholder="Budget" />
+                    <TextInput v-model="form.budget" type="number" class="w-full" placeholder="Budget" />
                 </div>
                 <div>
-                    <button class="px-8 py-2 text-gray-100 bg-green-500 rounded">
-                        Search
-                    </button>
+                    <PrimaryButton class="h-10" type="submit">Search</PrimaryButton>
                 </div>
             </form>
         </div>
