@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('property_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->boolean('can_sell')->default(false);
             $table->boolean('is_default')->default(false);
             $table->timestamps();
