@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuilderController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
@@ -26,6 +27,10 @@ Route::get('/properties/create', [PropertyController::class, 'create'])->name('p
 Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
 Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
 Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
+
+Route::get('/builders', [BuilderController::class, 'index'])->name('builders.index');
+Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
+Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');
 
 Route::middleware([
     'auth:sanctum',

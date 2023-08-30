@@ -21,16 +21,15 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use HasSlug;
 
+    const ROLE_BUILDER = 0;
+    const ROLE_ADMIN = 1;
+
     /**
-     * The attributes that are mass assignable.
+     * The attributes that are not mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
