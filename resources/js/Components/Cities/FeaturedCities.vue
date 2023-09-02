@@ -1,18 +1,16 @@
 <script setup>
 import CityItem from '@/Components/Cities/CityItem.vue'
-import { ref } from 'vue'
+import ListTitle from '@/Components/Properties/ListTitle.vue'
 
-const cities = ref([
-    { name: 'Toronto' },
-    { name: 'Hamilton' },
-    { name: 'Calgary' },
-    { name: 'Whitby' },
-])
+defineProps({
+    cities: Array
+})
+
 </script>
 
 <template>
     <div class="container">
-        <h2 class="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Search by City</h2>
+        <ListTitle title="Search by City" description="Search for your preconstruction projects by city"/>
         <div class="grid grid-cols-4 gap-4">
             <CityItem  v-for="city in cities" :city="city" :key="city.name"/>
         </div>

@@ -41,15 +41,15 @@ const sections = [
                 <PropertyList :data="section.data"/>
             </div>
             <div class="mt-16">
-                <FeaturedBuilders />
+                <FeaturedBuilders :builders="builders"/>
             </div>
             <div class="mt-16">
-                <FeaturedCities />
+                <FeaturedCities :cities="cities"/>
             </div>
             <div class="container mt-16 pb-4">
                 <div class="grid grid-cols-1">
-                    <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-black dark:text-white">Have Question ? Get in touch!</h3>
-                
+                    <ListTitle title="Have any Question?" description="Please contact us by filling the below form and we’ll get back to you as soon as possible."/>
+
                     <div class="mt-6 w-2/4 text-left">
                         <ContactForm />
                     </div>

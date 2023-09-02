@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,7 +15,9 @@ class HomeController extends Controller
                 'featured' => Property::all(),
                 'upcoming' => Property::all(),
                 'sold' => Property::all(),
-            ]
+            ],
+            'cities' => City::limit(3)->get(),
+            'builders' => City::limit(3)->get(),
         ]);
     }
 }
