@@ -34,6 +34,7 @@ Route::get('/builders', [BuilderController::class, 'index'])->name('builders.ind
 Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
 Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');
 
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::middleware([

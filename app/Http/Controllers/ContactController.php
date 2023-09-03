@@ -13,7 +13,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Contacts/Index', [
+            'contacts' => Contact::latest()->paginate(10),
+        ]);
     }
 
     /**
