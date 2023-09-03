@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BuilderController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Foundation\Application;
@@ -32,6 +33,8 @@ Route::get('/cities/create', [CityController::class, 'create'])->name('cities.cr
 Route::get('/builders', [BuilderController::class, 'index'])->name('builders.index');
 Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
 Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');
+
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::middleware([
     'auth:sanctum',

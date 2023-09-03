@@ -9,14 +9,13 @@ import TextArea from '@/Components/TextArea.vue';
 const form = useForm({
     name: '',
     email: '',
-    title: '',
-    description: '',
-    terms: false,
+    subject: '',
+    message: '',
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('title', 'description'),
+    form.post(route('contacts.store'), {
+        onFinish: () => form.reset(...Object.keys(form)),
     });
 };
 </script>
@@ -51,28 +50,28 @@ const submit = () => {
         </div>
 
         <div class="col-span-2">
-            <InputLabel for="title" value="Title" />
+            <InputLabel for="subject" value="Subject" />
             <TextInput
-                id="title"
-                v-model="form.title"
+                id="subject"
+                v-model="form.subject"
                 type="text"
                 class="mt-1 block w-full"
                 required
-                autocomplete="title"
+                autocomplete="subject"
             />
-            <InputError class="mt-2" :message="form.errors.title" />
+            <InputError class="mt-2" :message="form.errors.subject" />
         </div>
 
         <div class="col-span-2">
-            <InputLabel for="description" value="Description" />
+            <InputLabel for="message" value="Message" />
             <TextArea
-                id="description"
-                v-model="form.description"
+                id="message"
+                v-model="form.message"
                 type="text"
                 class="mt-1 block w-full"
                 required
             />
-            <InputError class="mt-2" :message="form.errors.description" />
+            <InputError class="mt-2" :message="form.errors.message" />
         </div>
 
         <div class="">
