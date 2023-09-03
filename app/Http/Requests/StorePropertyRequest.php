@@ -24,8 +24,8 @@ class StorePropertyRequest extends FormRequest
         return [
             'title' => 'required|min:3',
             'description' => 'required|string|min:10',
-            'province_id' => 'required|min:2',
-            'city' => 'required|min:3',
+            'province_id' => 'required|exists:provinces,id',
+            'city_id' => 'required|exists:cities,id',
             'address_line_1' => 'required|min:3',
             'address_line_2' => 'nullable|min:3',
             'bathroom' => 'required|integer',

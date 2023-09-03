@@ -24,6 +24,7 @@ Route::get('/', [HomeController::class,'index']);
 Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
 Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
 Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
+Route::get('/properties/{property}', [PropertyController::class, 'show'])->name('properties.show');
 Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
 Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
 Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
