@@ -17,17 +17,20 @@ const sections = [
     {
         title: 'Featured Projects',
         description: 'A great plateform to buy, sell and rent your properties without any agent or commisions.',
-        data: props.properties.featured
+        data: props.properties.featured,
+        url: '/properties?featured=1'
     },
     {
         title: 'Upcoming Projects',
         description: 'A great plateform to buy, sell and rent your properties without any agent or commisions.',
-        data: props.properties.upcoming
+        data: props.properties.upcoming,
+        url: '/properties?upcoming=1'
     },
     {
         title: 'Sold Out Projects',
         description: 'A great plateform to buy, sell and rent your properties without any agent or commisions.',
-        data: props.properties.sold
+        data: props.properties.sold,
+        url: '/properties?sold=1'
     },
 ]
 </script>
@@ -37,7 +40,7 @@ const sections = [
         <Hero />
         <div class="container px-16 max-w-7xl mx-auto">
             <div class="mt-16" v-for="section in sections" :key="section.title">
-                <ListTitle :title="section.title" :description="section.description"/>
+                <ListTitle :title="section.title" :description="section.description" :url="section.url"/>
                 <PropertyList :data="section.data"/>
             </div>
             <div class="mt-16">
