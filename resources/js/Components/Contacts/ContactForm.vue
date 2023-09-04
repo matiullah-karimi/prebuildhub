@@ -6,11 +6,19 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import TextArea from '@/Components/TextArea.vue';
 
+const props = defineProps({
+    propertyId: {
+        type: Number,
+        required: false,
+    },
+});
+
 const form = useForm({
     name: '',
     email: '',
     subject: '',
     message: '',
+    property_id: props.propertyId,
 });
 
 const submit = () => {
@@ -22,7 +30,7 @@ const submit = () => {
 
 <template>
     <form @submit.prevent="submit" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div>
+        <div :class="{'col-span-2': propertyId}">
             <InputLabel for="name" value="Name" />
             <TextInput
                 id="name"
@@ -36,7 +44,7 @@ const submit = () => {
             <InputError class="mt-2" :message="form.errors.name" />
         </div>
 
-        <div>
+        <div :class="{'col-span-2': propertyId}">
             <InputLabel for="email" value="Email" />
             <TextInput
                 id="email"

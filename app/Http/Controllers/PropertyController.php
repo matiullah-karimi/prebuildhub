@@ -65,7 +65,7 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
         return Inertia::render('Properties/Show', [
-            'property' => $property
+            'property' => $property->load('user', 'type', 'status', 'city')
         ]);
     }
 
