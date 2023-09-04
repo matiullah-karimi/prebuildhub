@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Property;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -12,12 +12,12 @@ class HomeController extends Controller
     function index() {
         return Inertia::render('Home', [
             'properties' => [
-                'featured' => Property::all(),
-                'upcoming' => Property::all(),
-                'sold' => Property::all(),
+                'featured' => Property::featured()->get(),
+                'upcoming' => Property::upcoming()->get(),
+                'sold' => Property::sold()->get(),
             ],
             'cities' => City::limit(3)->get(),
-            'builders' => City::limit(3)->get(),
+            'builders' => User::limit(3)->get(),
         ]);
     }
 }

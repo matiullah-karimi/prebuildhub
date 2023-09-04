@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('address_line_2')->nullable();
             $table->string('zip_code');
             $table->boolean('featured')->default(false);
-            $table->boolean('upcomming')->default(false);
+            $table->boolean('upcoming')->default(false);
             $table->integer('area');
             $table->integer('bathroom');
             $table->integer('bedroom');

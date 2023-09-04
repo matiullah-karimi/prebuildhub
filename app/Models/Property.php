@@ -80,4 +80,17 @@ class Property extends Model
     public function getAddressAttribute() {
         return "{$this->address_line_1}, {$this->city->name}, {$this->province->name}, {$this->zip_code}";
     }
+
+    public function scopeFeatured($query) {
+        return $query->where('featured', true);
+    }
+
+    public function scopeUpcoming($query) {
+        return $query->where('upcoming', true);
+    }
+
+    public function scopeSold($query) {
+        $soldStatusId = PropertyStatus::where('slug', 'sold')->first()->id;
+        return $query->where('property_status_id', $soldStatusId);
+    }
 }
