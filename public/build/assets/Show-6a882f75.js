@@ -1,1 +1,0 @@
-import{_ as o}from"./AppLayout-99116a4b.js";import{o as r,c as t}from"./app-ad87bae8.js";import"./_plugin-vue_export-helper-c27b6911.js";const m={__name:"Show",setup(e){return(_,a)=>(r(),t(o,{title:"Properties"}))}};export{m as default};
