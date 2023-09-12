@@ -1,6 +1,6 @@
 <script setup>
   import { Link } from '@inertiajs/vue3';
-
+  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 </script>
 
 <template>
@@ -8,7 +8,7 @@
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5">
         <span class="sr-only">PrebuildHub</span>
-        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" loading="eager">
+        <ApplicationLogo class="w-48"/>
       </a>
     </div>
     <div class="flex lg:hidden">

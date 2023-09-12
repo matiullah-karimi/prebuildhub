@@ -1,9 +1,12 @@
+<script setup>
+    import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+</script>
 <template>
     <footer class="p-16 bg-[#EEEEEE] font-normal bg-no-repeat bg-center bg-cover" style="background-image: url('/images/footer.png');">
         <div class="lg:flex lg:justify-evenly">
             <div class="max-w-sm mt-6 text-center lg:mt-0">
-                <h6 class="mb-4 text-2xl font-semibold text-gray-700">PrebuildHub</h6>
-                <div>
+                <ApplicationLogo />
+                <div class="mt-2">
                     We’re here to help you find your perfect, new home.
 
                     <div class="flex flex-col mt-4">
