@@ -59,6 +59,7 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'is_admin'
     ];
 
         /**
@@ -69,5 +70,10 @@ class User extends Authenticatable
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
+    }
+
+    function isAdminAttribute() : bool
+    {
+        return $this->role === self::ROLE_ADMIN;
     }
 }

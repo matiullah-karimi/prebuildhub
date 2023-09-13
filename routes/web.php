@@ -5,9 +5,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,25 +18,24 @@ use Inertia\Inertia;
 |
 */
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
+    Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
+
+    Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
+    Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
+
+    Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
+    Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');
+
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+    Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+});
+
 Route::get('/', [HomeController::class,'index']);
 
 Route::get('/properties', [PropertyController::class, 'index'])->name('properties.index');
-Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
-Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
 Route::get('/properties/{property}', [PropertyController::class, 'show'])->name('properties.show');
 Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
-Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
-Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
 
 Route::get('/builders', [BuilderController::class, 'index'])->name('builders.index');
-Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
-Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');
-
-Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
-Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
-
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
