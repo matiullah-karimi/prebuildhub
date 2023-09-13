@@ -9,7 +9,7 @@ import SearchBar from '@/Components/Common/SearchBar.vue';
             <div class="mx-auto max-w-2xl py-12">
                 <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                     <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                        A hub for finding your new property. <a href="#" class="font-semibold text-indigo-600"></a>
+                        A hub for finding your new property. <a href="#" class="font-semibold text-orange-600"></a>
                     </div>
                 </div>
                 <div class="text-center">
