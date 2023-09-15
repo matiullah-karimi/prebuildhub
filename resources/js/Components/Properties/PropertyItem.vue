@@ -12,7 +12,7 @@
 <template>
     <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
         <div class="relative">
-            <img :src="property.images[0]" alt="">
+            <img class="h-56 object-cover object-center" :src="property.images[0]" alt="">
 
             <div class="absolute top-4 end-4">
                 <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart mdi-18px"></i></a>
