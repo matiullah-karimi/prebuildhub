@@ -14,5 +14,6 @@ defineProps({
         <div class="grid grid-cols-4 gap-4 mt-6">
             <BuilderItem  v-for="builder in builders" :builder="builder" :key="builder.name"/>
         </div>
+        <a class="lg:hidden text-blue-600 text-lg cursor-pointer" href="/builders">View All</a>
     </div>
 </template>

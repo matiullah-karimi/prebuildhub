@@ -38,10 +38,11 @@ const sections = [
 <template>
     <AppLayout title="Home">
         <Hero />
-        <div class="container px-16 max-w-7xl mx-auto">
-            <div class="mt-16" v-for="section in sections" :key="section.title">
+        <div class="container px-4 lg:px-16 lg:max-w-7xl mx-auto">
+            <div class="mt-8 lg:mt-16" v-for="section in sections" :key="section.title">
                 <ListTitle :title="section.title" :description="section.description" :url="section.url"/>
                 <PropertyList :data="section.data"/>
+                <a class="lg:hidden text-blue-600 text-lg cursor-pointer mt-4" :href="section.url">View All</a>
             </div>
             <div class="mt-16">
                 <FeaturedBuilders :builders="builders"/>
@@ -53,7 +54,7 @@ const sections = [
                 <div class="grid grid-cols-1">
                     <ListTitle title="Have any Question?" description="Please contact us by filling the below form and we’ll get back to you as soon as possible."/>
 
-                    <div class="mt-6 w-2/4 text-left">
+                    <div class="mt-6 w-full lg:w-2/4 text-left">
                         <ContactForm />
                     </div>
                 </div><!--end grid-->

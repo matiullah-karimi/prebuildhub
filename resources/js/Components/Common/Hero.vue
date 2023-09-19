@@ -17,7 +17,7 @@ import SearchBar from '@/Components/Common/SearchBar.vue';
                     <p class="mt-6 text-lg leading-8 text-white">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
                 </div>
             </div>
-            <div class="w-1/2 mx-auto">
+            <div class="w-full lg:w-1/2 mx-auto">
                 <SearchBar />
             </div>
             <div class="mt-12">_</div>

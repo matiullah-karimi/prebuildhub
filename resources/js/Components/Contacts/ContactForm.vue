@@ -57,7 +57,7 @@ const submit = () => {
             <InputError class="mt-2" :message="form.errors.email" />
         </div>
 
-        <div class="col-span-2">
+        <div class="lg:col-span-2">
             <InputLabel for="subject" value="Subject" />
             <TextInput
                 id="subject"
@@ -70,7 +70,7 @@ const submit = () => {
             <InputError class="mt-2" :message="form.errors.subject" />
         </div>
 
-        <div class="col-span-2">
+        <div class="lg:col-span-2">
             <InputLabel for="message" value="Message" />
             <TextArea
                 id="message"
