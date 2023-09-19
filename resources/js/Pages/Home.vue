@@ -42,7 +42,9 @@ const sections = [
             <div class="mt-8 lg:mt-16" v-for="section in sections" :key="section.title">
                 <ListTitle :title="section.title" :description="section.description" :url="section.url"/>
                 <PropertyList :data="section.data"/>
-                <a class="lg:hidden text-blue-600 text-lg cursor-pointer mt-4" :href="section.url">View All</a>
+                <div class="lg:hidden mt-4 flex justify-center">
+                    <a class="text-blue-600 text-lg cursor-pointer mt-4" :href="section.url">View All</a>
+                </div>
             </div>
             <div class="mt-16">
                 <FeaturedBuilders :builders="builders"/>
