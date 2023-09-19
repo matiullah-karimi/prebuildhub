@@ -46,10 +46,10 @@ const sections = [
                     <a class="text-blue-600 text-lg cursor-pointer mt-4" :href="section.url">View All</a>
                 </div>
             </div>
-            <div class="mt-16">
+            <div class="mt-8 lg:mt-16">
                 <FeaturedBuilders :builders="builders"/>
             </div>
-            <div class="mt-16">
+            <div class="mt-8 lg:mt-16">
                 <FeaturedCities :cities="cities"/>
             </div>
             <div class="container mt-16 pb-4">
