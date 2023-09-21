@@ -21,7 +21,7 @@
 <template>
     <div class="m-4 lg:m-0">
         <div class="py-2 px-2">
-            <form class="flex gap-2" @submit.prevent="search">
+            <form class="flex flex-col md:flex-row gap-2" @submit.prevent="search">
                 <div class="w-full">
                     <div>
                         <select id="property_type_id" v-model="form.type" class="block w-full border-gray-300 rounded" required autofocus>
@@ -36,8 +36,8 @@
                 <div class="w-full">
                     <TextInput v-model="form.budget" type="number" class="w-full" placeholder="Budget" />
                 </div>
-                <div>
-                    <PrimaryButton class="h-10" type="submit">Search</PrimaryButton>
+                <div class="flex justify-end w-full md:w-auto">
+                    <PrimaryButton class="h-10 w-full md:w-auto" type="submit">Search</PrimaryButton>
                 </div>
             </form>
         </div>

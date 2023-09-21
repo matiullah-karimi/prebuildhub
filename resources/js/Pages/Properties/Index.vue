@@ -18,7 +18,7 @@
 
 <template>
     <app-layout title="Properties List">
-        <div class="p-16">
+        <div class="p-4 md:p-16">
             <PropertySearch :types="types"/>
         </div>
         <section class="px-4 py lg:px-20">
