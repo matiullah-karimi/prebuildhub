@@ -1,9 +1,11 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, router } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import { ref, watch } from 'vue';
+import { useAuth } from '@/Composables/auth';
 
 const showMobileMenu = ref(false);
+const { isLoggedIn } = useAuth();
 
 // watch for showMobileMenu changes and close the menu when it changes
 watch(showMobileMenu, (value) => {
@@ -11,6 +13,11 @@ watch(showMobileMenu, (value) => {
 
   return document.body.classList.add('overflow-hidden');
 });
+
+const logout = () => {
+  router.post(route('logout'));
+}
+
 </script>
 
 <template>
@@ -39,7 +46,10 @@ watch(showMobileMenu, (value) => {
       <Link href="/cities" class="text-sm font-semibold leading-6 text-gray-900">Cities</Link>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <Link href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
+      <form v-if="$page.props.auth.user" @submit.prevent="logout">
+        <button type="submit">Logout</button>
+      </form>
+      <Link v-else href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->

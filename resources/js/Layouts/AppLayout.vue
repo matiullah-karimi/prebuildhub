@@ -2,6 +2,8 @@
 import Banner from '@/Components/Banner.vue';
 import Header from '@/Components/Common/Header.vue';
 import Footer from '@/Components/Common/Footer.vue';
+import { Head } from '@inertiajs/vue3';
+
 
 defineProps({
     title: String,
