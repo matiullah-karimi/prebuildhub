@@ -72,7 +72,7 @@ class User extends Authenticatable
             ->saveSlugsTo('slug');
     }
 
-    function isAdminAttribute() : bool
+    function getIsAdminAttribute() : bool
     {
         return $this->role === self::ROLE_ADMIN;
     }
