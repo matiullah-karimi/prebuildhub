@@ -72,7 +72,7 @@ const prev = () => {
     </Modal>
     <div class="container grid grid-cols-3 gap-2 mx-auto py-4">
         <div v-for="(image, index) in images" :key="image" class="first:col-span-3" @click="openModal(index)">
-            <img class="rounded cursor-pointer" :src="image" alt="image">
+            <img class="rounded cursor-pointer h-full object-cover object-center" :src="image" alt="image">
         </div>
     </div>
 </template>
