@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-c27b6911.js";import{p as t,o as c,c as n}from"./app-6c16f44c.js";const r={};function p(s,a){const o=t("AppLayout");return c(),n(o)}const m=e(r,[["render",p]]);export{m as default};
