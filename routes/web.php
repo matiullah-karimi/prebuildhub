@@ -25,8 +25,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
     Route::get('/properties/create', [PropertyController::class, 'create'])->name('properties.create');
 
+    Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
     Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
     Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
+    Route::get('/cities/{city}', [CityController::class, 'show'])->name('cities.show');
 
     Route::post('/builders', [BuilderController::class, 'store'])->name('builders.store');
     Route::get('/builders/create', [BuilderController::class, 'create'])->name('builders.create');

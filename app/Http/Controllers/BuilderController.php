@@ -15,7 +15,7 @@ class BuilderController extends Controller
     public function index()
     {
         return Inertia::render('Builders/Index', [
-            'builders' => User::where('role', User::ROLE_BUILDER)->paginate(20)
+            'builders' => User::builders()->paginate(20)
         ]);
     }
 

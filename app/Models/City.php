@@ -27,4 +27,12 @@ class City extends Model
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
+
+    function province() {
+        return $this->belongsTo(Province::class);
+    }
+
+    function properties() {
+        return $this->hasMany(Property::class);
+    }
 }

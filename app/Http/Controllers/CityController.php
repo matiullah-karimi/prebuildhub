@@ -59,12 +59,7 @@ class CityController extends Controller
     public function show(City $city)
     {
         return Inertia::render('Cities/Show', [
-            'city' => [
-                'id' => $city->id,
-                'name' => $city->name,
-                'province' => $city->province->name,
-                'created_at' => $city->created_at->format('m/d/Y'),
-            ],
+            'city' => $city->load('properties'),
         ]);
     }
 

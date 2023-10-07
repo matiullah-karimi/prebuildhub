@@ -76,4 +76,24 @@ class User extends Authenticatable
     {
         return $this->role === self::ROLE_ADMIN;
     }
+
+    function getIsBuilderAttribute() : bool
+    {
+        return $this->role === self::ROLE_BUILDER;
+    }
+
+    function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
+
+    function scopeBuilders($query)
+    {
+        return $query->where('role', self::ROLE_BUILDER);
+    }
+
+    function scopeAdmins($query)
+    {
+        return $query->where('role', self::ROLE_ADMIN);
+    }
 }

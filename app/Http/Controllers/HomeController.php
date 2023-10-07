@@ -17,7 +17,7 @@ class HomeController extends Controller
                 'sold' => Property::sold()->get(),
             ],
             'cities' => City::limit(3)->get(),
-            'builders' => User::limit(3)->get(),
+            'builders' => User::builders()->limit(3)->get(),
         ]);
     }
 }

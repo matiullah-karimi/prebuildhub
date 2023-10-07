@@ -60,9 +60,27 @@ const submit = () => {
                 </div>
 
                 <div>
+                    <InputLabel for="bedrooms" value="Bedrooms" />
+                    <TextInput id="bedrooms" v-model="form.bedroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bedrooms" />
+                    <InputError class="mt-2" :message="form.errors.bedroom" />
+                </div>
+
+                <div>
+                    <InputLabel for="bathrooms" value="Bathrooms" />
+                    <TextInput id="bathrooms" v-model="form.bathroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bathrooms" />
+                    <InputError class="mt-2" :message="form.errors.bathroom" />
+                </div>
+
+                <div>
                     <InputLabel for="price" value="Price" />
                     <TextInput id="price" v-model="form.price" type="number" class="mt-1 block w-full" required autofocus autocomplete="price" />
                     <InputError class="mt-2" :message="form.errors.price" />
+                </div>
+
+                <div>
+                    <InputLabel for="area" value="Area(sqft)" />
+                    <TextInput id="area" v-model="form.area" type="number" class="mt-1 block w-full" required autofocus autocomplete="area" />
+                    <InputError class="mt-2" :message="form.errors.area" />
                 </div>
                 
                 <div class="col-span-2">
@@ -75,12 +93,6 @@ const submit = () => {
                     <InputLabel for="address_line_1" value="Address Line 1" />
                     <TextInput id="address_line_1" v-model="form.address_line_1" type="text" class="mt-1 block w-full" required autofocus autocomplete="address_line_1" />
                     <InputError class="mt-2" :message="form.errors.address_line_1" />
-                </div>
-
-                <div>
-                    <InputLabel for="address_line_2" value="Address Line 2" />
-                    <TextInput id="address_line_2" v-model="form.address_line_2" type="text" class="mt-1 block w-full" required autofocus autocomplete="address_line_2" />
-                    <InputError class="mt-2" :message="form.errors.address_line_2" />
                 </div>
 
                 <div>
@@ -105,30 +117,6 @@ const submit = () => {
                     <InputLabel for="zip_code" value="Zip Code" />
                     <TextInput id="zip_code" v-model="form.zip_code" type="text" class="mt-1 block w-full" required autofocus autocomplete="zip_code" />
                     <InputError class="mt-2" :message="form.errors.zip_code" />
-                </div>
-
-                <div>
-                    <InputLabel for="area" value="Area(sqft)" />
-                    <TextInput id="area" v-model="form.area" type="number" class="mt-1 block w-full" required autofocus autocomplete="area" />
-                    <InputError class="mt-2" :message="form.errors.area" />
-                </div>
-
-                <div>
-                    <InputLabel for="bedrooms" value="Bedrooms" />
-                    <TextInput id="bedrooms" v-model="form.bedroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bedrooms" />
-                    <InputError class="mt-2" :message="form.errors.bedroom" />
-                </div>
-
-                <div>
-                    <InputLabel for="bathrooms" value="Bathrooms" />
-                    <TextInput id="bathrooms" v-model="form.bathroom" type="number" class="mt-1 block w-full" required autofocus autocomplete="bathrooms" />
-                    <InputError class="mt-2" :message="form.errors.bathroom" />
-                </div>
-
-                <div>
-                    <InputLabel for="floors" value="Floors" />
-                    <TextInput id="floors" v-model="form.floor" type="number" class="mt-1 block w-full" required autofocus autocomplete="floors" />
-                    <InputError class="mt-2" :message="form.errors.floor" />
                 </div>
 
                 <div>
