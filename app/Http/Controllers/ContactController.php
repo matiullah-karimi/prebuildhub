@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContactRequest;
+use App\Models\Category;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ContactController extends Controller
     public function index()
     {
         return inertia('Contacts/Index', [
-            'contacts' => Contact::latest()->paginate(10),
+            'contacts' => Contact::query()->search()->latest()->paginate(10),
+            'categories' => Category::all()
         ]);
     }
 
@@ -66,5 +68,16 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function updateCategory(Contact $contact)
+    {
+        $contact->category = request('category');
+        $contact->save();
+
+        return $contact;
     }
 }

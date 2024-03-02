@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         (new AminitySeeder())->run();
         (new ProvinceSeeder())->run();
         (new UserSeeder())->run();
+        (new ContactsSeeder())->run();
+        (new CategorySeeder())->run();
     }
 }

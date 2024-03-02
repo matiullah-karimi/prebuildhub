@@ -10,4 +10,12 @@ class Contact extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    function scopeSearch($query) {
+        $filters = request()->all();
+
+        if (isset($filters['category'])) {
+            $query->where('category', $filters['category']);
+        }
+    }
 }

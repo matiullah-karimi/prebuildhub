@@ -35,6 +35,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+    Route::put('/contacts/{contact}/category', [ContactController::class, 'updateCategory'])->name('contacts.updateCategory');
 });
 
 Route::get('/', [HomeController::class,'index'])->name('home');
